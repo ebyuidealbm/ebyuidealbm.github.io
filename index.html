@@ -1,28 +1,4 @@
 
-<?php
-session_start();
-
-$isAdmin = isset($_SESSION['login']);
-if (isset($_POST['delete']) && $isAdmin) {
-    $file = $_POST['delete'];
-    if (file_exists($file)) {
-        unlink($file);
-    }
-}
-if (isset($_FILES['photo']) && $isAdmin) {
-
-    $targetDir = "galeri/";
-
-    if (!file_exists($targetDir)) {
-        mkdir($targetDir, 0777, true);
-    }
-
-    $fileName = basename($_FILES["photo"]["name"]);
-    $targetFile = $targetDir . $fileName;
-
-    move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile);
-}
-?>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -395,71 +371,14 @@ cards.forEach(card => observer.observe(card));
 
 <div class="gallery">
 
-<?php
-$folder = "galeri/";
-$files = glob($folder . "*");
-
-// 🔥 En başta görünmesini istediğinler
-$priority = [
-    "galeri/2.jpg",
-    "galeri/3.jpg",
-    "galeri/4.jpg",
-    "galeri/5.jpg",
-    "galeri/6.jpg",
-    "galeri/7.jpg"
-];
-
-// 🔥 SIRALA
-usort($files, function($a, $b) use ($priority) {
-
-    $aIndex = array_search($a, $priority);
-    $bIndex = array_search($b, $priority);
-
-    if ($aIndex !== false && $bIndex !== false) {
-        return $aIndex - $bIndex;
-    }
-
-    if ($aIndex !== false) return -1;
-    if ($bIndex !== false) return 1;
-
-    return 0;
-});
-
-// 🔥 YAZDIR
-foreach ($files as $file) {
-
-    echo "<div style='position:relative; display:inline-block;'>";
-
-    echo "<img src='$file' class='zoomable'>";
-
-    if ($isAdmin) {
-        echo "
-        <form method='POST' style='position:absolute; top:5px; right:5px;'>
-            <input type='hidden' name='delete' value='$file'>
-            <button style='background:red;color:white;border:none;padding:5px 8px;cursor:pointer;'>X</button>
-        </form>
-        ";
-    }
-
-    echo "</div>";
-}
-?>
+<img src="galeri/2.jpg" class="zoomable">
+<img src="galeri/3.jpg" class="zoomable">
+<img src="galeri/4.jpg" class="zoomable">
+<img src="galeri/5.jpg" class="zoomable">
+<img src="galeri/6.jpg" class="zoomable">
+<img src="galeri/7.jpg" class="zoomable">
 
 </div>
-<?php if ($isAdmin): ?>
-
-<div style="text-align:center; margin-top:40px;">
-
-<h3 style="color:white;">Fotoğraf Yükle</h3>
-
-<form method="POST" enctype="multipart/form-data">
-    <input type="file" name="photo" required>
-    <button type="submit">Yükle</button>
-</form>
-
-</div>
-
-<?php endif; ?>
 
 </section>
 
