@@ -51,7 +51,7 @@
 <h1> İdeal Hukuk Kulübü<br> Birleşmiş Milletler Simülasyonu</h1>
 <a href="#formSection" id="anketBtn"
 style="display:inline-block;padding:14px 28px;background:linear-gradient(135deg,#2563eb,#4f46e5);color:white;font-size:16px;font-weight:500;text-decoration:none;border-radius:40px;box-shadow:0 8px 20px rgba(0,0,0,0.2);transition:all 0.3s ease;animation:gelme 0.8s ease;">
-Başvurmak İçin Tıklaynız
+Sonuçlar için tıklayınız
 </a>
 
 <style>
@@ -231,15 +231,135 @@ Hukukçular Derneği; seminerler, konferanslar, eğitim programları ve yayınla
 
 <section id="formSection" class="formSection reveal">
 
-<h2>Simülasyona Katılmak için Formu Doldurun</h2>
 
-<div class="formBox">
+<style>
+.card {
+    background:#1E3340;
+    border-radius:18px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    transition: all 0.4s ease;
+    opacity:0;
+    transform: translateY(-60px);
+}
 
-<iframe
-src="https://forms.gle/YS2aEL6pwTpZbqEXA"
-width="100%"
-height="700">
-</iframe>
+/* HOVER */
+.card:hover {
+    transform: scale(1.05);
+    box-shadow:0 15px 35px rgba(0,0,0,0.8);
+}
+
+/* SCROLL ANİMASYON */
+.card.show {
+    opacity:1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+/* İSİMLER */
+.bold-text {
+    font-weight:bold;
+    color:white;
+}
+</style>
+
+<style>
+.card {
+    background:#1E3340;
+    border-radius:18px;
+    padding:20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    box-shadow:0 10px 25px rgba(0,0,0,0.5);
+    opacity:0;
+    transform: translateY(-60px);
+    transition: box-shadow 0.3s ease;
+}
+
+/* SCROLL ANİMASYON */
+.card.show {
+    opacity:1;
+    transform: translateY(0);
+    transition: all 0.8s ease;
+}
+
+/* HOVER + TELEFON TIKLAMA */
+.card:hover {
+    animation: pulse 0.4s ease;
+}
+
+.card:active {
+    animation: pulse 0.4s ease;
+}
+
+/* PULSE ANİMASYON */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+    100% { transform: scale(1); }
+}
+
+/* YAZILAR */
+.bold-text {
+    font-weight:bold;
+    color:white;
+}
+</style>
+
+<div style="width:95%; margin:60px auto; overflow:visible;">
+    <h2 style="color:white; text-align:center; margin-bottom:40px;">
+        Birleşmiş Milletler Simülasyon Sonuçları
+    </h2>
+
+    <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:25px;">
+
+        <!-- TÜM ÜLKELER -->
+        
+        <div class="card"><div><div class="bold-text">Türkiye</div><div>Temsilci:<br> <span class="bold-text">Burak Karadaş</span></div><div>Danışman:<br> <span class="bold-text">Esra Aksoy</span></div></div><img src="https://flagcdn.com/w80/tr.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">Azerbaycan</div><div>Temsilci:<br> <span class="bold-text">Yaşar Arak</span></div><div>Danışman:<br> <span class="bold-text">Oğuzhan Erkan</span></div></div><img src="https://flagcdn.com/w80/az.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">Pakistan</div><div>Temsilci:<br> <span class="bold-text">Doğukan Kurter</span></div><div>Danışman:<br> <span class="bold-text">Alper Kerim Karagöz</span></div></div><img src="https://flagcdn.com/w80/pk.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">Rusya</div><div>Temsilci:<br> <span class="bold-text">veysel Sefa Korkmaz</span></div><div>Danışman:<br> <span class="bold-text">Melike Daş</span></div></div><img src="https://flagcdn.com/w80/ru.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">ABD</div><div>Temsilci:<br> <span class="bold-text">Emre Yalçın</span></div><div>Danışman:<br> <span class="bold-text">Zişan Nisa Yılmaz</span></div></div><img src="https://flagcdn.com/w80/us.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">Çin</div><div>Temsilci:<br> <span class="bold-text">Furkan Duran</span></div><div>Danışman:<br> <span class="bold-text">Nursel Erkan</span></div></div><img src="https://flagcdn.com/w80/cn.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">Fransa</div><div>Temsilci:<br> <span class="bold-text">Şehrinur Çelik</span></div><div>Danışman:<br> <span class="bold-text">Nursu Karabacak</span></div></div><img src="https://flagcdn.com/w80/fr.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">İtalya</div><div>Temsilci:<br> <span class="bold-text">Sude Tiner</span></div><div>Danışman:<br> <span class="bold-text">Elifnaz Pulat</span></div></div><img src="https://flagcdn.com/w80/it.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">İspanya</div><div>Temsilci:<br> <span class="bold-text">Fatmagül Zehra</span></div><div>Danışman:<br> <span class="bold-text">Senanur Erdem</span></div></div><img src="https://flagcdn.com/w80/es.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">İngiltere</div><div>Temsilci:<br> <span class="bold-text">Beyza Han</span></div><div>Danışman:<br> <span class="bold-text">Sarp Sanaç</span></div></div><img src="https://flagcdn.com/w80/gb.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">İran</div><div>Temsilci:<br> <span class="bold-text">Cem Sağın</span></div><div>Danışman:<br> <span class="bold-text">Esma Yaz</span></div></div><img src="https://flagcdn.com/w80/ir.png" width="60"></div>
+
+        <div class="card"><div><div class="bold-text">İsrail</div><div>Temsilci:<br> <span class="bold-text">Bünyamin Elzeren</span></div><div>Danışman:<br> <span class="bold-text">Beyza Karadağ</span></div></div><img src="https://flagcdn.com/w80/il.png" width="60"></div>
+
+    </div>
+</div>
+
+<script>
+const cards = document.querySelectorAll(".card");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if(entry.isIntersecting){
+            entry.target.classList.add("show");
+        }
+    });
+});
+
+cards.forEach(card => observer.observe(card));
+</script>
+
 
 </div>
 
